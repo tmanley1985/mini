@@ -14,6 +14,9 @@ class AppTest extends TestCase
 
 	public function test_can_get_container()
 	{
+		$container = $this->app->getContainer();
+
+		$this->assertEquals(get_class($container), 'App\Container');
 
 	}
 }

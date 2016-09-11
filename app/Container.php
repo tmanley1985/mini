@@ -38,8 +38,11 @@ class Container implements ArrayAccess
 
 	public function offsetExists($offset)
 	{
-		return !!$this->items($offset);
+		return !!$this->offsetGet($offset);
 	}
 
-	
+	public function has($offset)
+	{
+		return $this->offsetExists($offset);
+	}
 }

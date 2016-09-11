@@ -32,4 +32,10 @@ class ContainerTest extends TestCase
 
 		$this->assertEquals($this->container->offsetGet('test'), 'value');
 	}
+
+	public function test_exception_thrown_if_offset_is_undefined()
+	{
+		$this->expectException(Exception::class);
+		$this->container->offsetGet('testOffset');
+	}
 }

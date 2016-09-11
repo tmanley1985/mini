@@ -45,4 +45,13 @@ class ContainerTest extends TestCase
 
 		$this->assertTrue($this->container->has('test'));
 	}
+
+	public function test_can_unset_array_key()
+	{
+		$this->container->offsetSet('test', 'value');
+
+		$this->container->offsetUnset('test');
+
+		$this->assertNull($this->container->offsetGet('test'));
+	}
 }

@@ -10,12 +10,13 @@ class Container implements ArrayAccess
 
 	public function offsetSet($offset, $value)
 	{
-		
+		$this->items[$offset] = $value;
 	}
 
 	public function offsetGet($offset)
 	{
-
+		
+		return $this->items[$offset];
 	}
 
 	public function offsetUnset($offset)

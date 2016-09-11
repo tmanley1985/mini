@@ -23,5 +23,3 @@ $container['config'] = function () {
 	];
 };
 
-
-

@@ -6,9 +6,11 @@ use ArrayAccess;
 
 class Container implements ArrayAccess
 {
+	protected $items;
+
 	public function offsetSet($offset, $value)
 	{
-
+		
 	}
 
 	public function offsetGet($offset)
@@ -23,6 +25,6 @@ class Container implements ArrayAccess
 
 	public function offsetExists($offset)
 	{
-		
+
 	}
 }

@@ -32,8 +32,9 @@ class Container implements ArrayAccess
 	}
 
 	public function offsetUnset($offset)
-	{
-
+	{	
+		if($this->has($offset))
+			unset($this->items[$offset]);
 	}
 
 	public function offsetExists($offset)

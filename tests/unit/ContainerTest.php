@@ -48,10 +48,14 @@ class ContainerTest extends TestCase
 
 	public function test_can_unset_array_key()
 	{
+		// Add more than one offset so that array isn't null.
 		$this->container->offsetSet('test', 'value');
+
+		$this->container->offsetSet('test2', 'value2');
 
 		$this->container->offsetUnset('test');
 
-		$this->assertNull($this->container->offsetGet('test'));
+		$this->expectException(Exception::class);
+		$this->container->offsetGet('test');
 	}
 }

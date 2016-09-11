@@ -38,4 +38,11 @@ class ContainerTest extends TestCase
 		$this->expectException(Exception::class);
 		$this->container->offsetGet('testOffset');
 	}
+
+	public function test_it_can_check_if_items_has_offset()
+	{
+		$this->container->offsetSet('test', 'value');
+
+		$this->assertTrue($this->container->has('test'));
+	}
 }
